@@ -13,6 +13,7 @@ def _isPrime(n):
 cum_sum = 0
 for n in range(a, b+1):
     if _isPrime(n) == False:
-        cum_sum += n
+        if n != 1
+            cum_sum += n
 
 print(cum_sum)
