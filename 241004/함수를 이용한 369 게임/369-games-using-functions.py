@@ -2,10 +2,9 @@ a, b = map(int, input().split())
 
 def three_six_nine(n):
     
-    ten = n // 10
-    one = n % 10
+    str_n = str(n)
 
-    if ten in [3, 6, 9] or one in [3, 6, 9] or n % 3 == 0:
+    if "3" in str_n or "6" in str_n or "9" in str_n or n % 3 == 0:
         return True
 
 cnt = 0
