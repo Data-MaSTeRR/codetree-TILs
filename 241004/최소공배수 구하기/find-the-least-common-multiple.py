@@ -1,13 +1,12 @@
-def baesu(num):
+def baesu(num, length):
 
     l = []
-    cnt = 1
     mul_num = num
-    while (mul_num <= 100):
+    
+    for cnt in range(1, length + 1):
         
-        l.append(mul_num)
-        cnt += 1
         mul_num = num * cnt
+        l.append(mul_num)
 
     return l
 
@@ -34,7 +33,7 @@ def min_baesu(n_list, m_list):
 
 
 n, m = map(int, input().split())
-n_list = baesu(n)
-m_list = baesu(m)
+n_list = baesu(n, m)
+m_list = baesu(m, n)
 
 min_baesu(n_list, m_list)
