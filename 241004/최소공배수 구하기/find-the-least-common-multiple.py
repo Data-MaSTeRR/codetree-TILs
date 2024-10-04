@@ -14,6 +14,7 @@ def baesu(num):
 
 def min_baesu(n_list, m_list):
 
+    min_value = 0
     flag = False
     for n in n_list:
         for m in m_list:
