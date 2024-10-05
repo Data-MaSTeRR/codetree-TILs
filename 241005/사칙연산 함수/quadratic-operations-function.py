@@ -18,7 +18,7 @@ if o == "+":
     print(f"{a} {o} {c} = {plus(a,c)}")
 
 elif o == "-":
-    print(f"{a} {o} {c} = {minuse(a,c)}")
+    print(f"{a} {o} {c} = {minus(a,c)}")
 
 elif o == "*":
     print(f"{a} {o} {c} = multiply{(a,c)}")
