@@ -21,7 +21,7 @@ elif o == "-":
     print(f"{a} {o} {c} = {minus(a,c)}")
 
 elif o == "*":
-    print(f"{a} {o} {c} = multiply{(a,c)}")
+    print(f"{a} {o} {c} = {multiply(a,c)}")
 
 elif o == "/":
     print(f"{a} {o} {c} = {divide(a,c)}")
