@@ -1,10 +1,15 @@
 n, m = map(int, input().split())
-n_list = list(map(int, input.split()))
+n_list = list(map(int, input().split()))
 matrix = [list(map(int, input().split())) for _ in range(m)]
 
-list_sum = 0
+idx_list = []
 for i in range(m):
-    for j in range(2):
-        list_sum += n_list[matrix[i][j] - 1]
+    for j in range(matrix[i][0], matrix[i][1] + 1):
+        idx_list.append(j)
 
-print(list_sum)
+    list_sum = 0
+    for idx in idx_list:
+        list_sum += n_list[idx - 1]
+
+    print(list_sum)
+    idx_list = []
