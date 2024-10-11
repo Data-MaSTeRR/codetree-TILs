@@ -12,7 +12,7 @@ def median(n_list):
             
             temp_list.append(n)
 
-            idx = int(((cnt + 1) / 2)) - 1
+            idx = int(((cnt + 1) / 2) - 1)
             median_list.append(temp_list[idx])
             
             cnt += 1
