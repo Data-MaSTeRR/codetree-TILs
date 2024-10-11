@@ -8,7 +8,7 @@ def minCheck(x, y, z):
 
     cum_m = 0
 
-    if (d == 11 and h < 11) or (d == 11 and h == 11 and m < 11):
+    if x < 11 or (x == 11 and y < 11) or (x == 11 and y == 11 and z < 11):
         return -1
 
     while True:
