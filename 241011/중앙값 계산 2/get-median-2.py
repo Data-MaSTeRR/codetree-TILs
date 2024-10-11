@@ -8,7 +8,7 @@ def median(n_list):
     cnt = 1
     for n in n_list:
         
-        if cnt % 2 != 0:
+        if n % 2 != 0:
             
             temp_list.append(n)
 
