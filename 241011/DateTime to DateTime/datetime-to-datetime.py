@@ -26,6 +26,7 @@ def minCheck(x, y, z):
         if h == 24:
             d += 1
             h = 0
+            m = 0
         
     
     return cum_m
