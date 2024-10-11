@@ -27,6 +27,12 @@ def _7daysCount(m1, d1, m2, d2, A):
 
     days_week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+    if m1 == m2 and d1 == d2:
+        if A == 'Mon':
+            return 1
+        else:
+            return 0
+
     daycnt = daysCount(m2, d2) - daysCount(m1, d1)
     dayweekcnt = daycnt // 7
     
