@@ -8,18 +8,21 @@ def median(n_list):
     cnt = 1
     for n in n_list:
         
-        if n % 2 != 0:
+        if cnt % 2 != 0:
             
             temp_list.append(n)
+            sort_list = sorted(temp_list)
 
             idx = int(((cnt + 1) / 2) - 1)
-            median_list.append(temp_list[idx])
+            median_list.append(sort_list[idx])
             
             cnt += 1
 
         else:
             temp_list.append(n)
             cnt += 1
+        
+        sort_list = []
         
 
     return median_list
