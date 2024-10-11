@@ -7,7 +7,7 @@ def daysCheck(x, y):
 
     num_of_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    cum_d = 1
+    cum_d = 0
     while True:
         
         if m == x and d == y:
@@ -23,4 +23,4 @@ def daysCheck(x, y):
 
     return cum_d
 
-print(daysCheck(m2, d2) - daysCheck(m1, d1))
+print(daysCheck(m2, d2) - daysCheck(m1, d1) + 1)
