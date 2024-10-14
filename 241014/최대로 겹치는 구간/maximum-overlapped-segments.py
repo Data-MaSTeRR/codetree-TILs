@@ -15,8 +15,8 @@ for n_list in matrix:
             max_num = n 
 
 # 원소마다 값을 카운트
-count_list = [ 0 for _ in range(1000) ]
+count_list = [ 0 for _ in range(201) ]
 for num in num_list:
-    count_list[num - 1] += 1
+    count_list[num + 100] += 1
 
 print(max(count_list))
