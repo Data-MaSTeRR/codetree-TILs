@@ -19,4 +19,6 @@ count_list = [ 0 for _ in range(201) ]
 for num in num_list:
     count_list[num + 100] += 1
 
+print(count_list)
+
 print(max(count_list))
