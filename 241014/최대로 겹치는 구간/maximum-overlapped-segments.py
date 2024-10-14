@@ -7,10 +7,10 @@ matrix = [ list(map(int, input().split())) for _ in range(n) ]
 max_num = 0
 num_list = []
 for n_list in matrix:
-    for i in range(n_list[0] + 100, n_list[1] + 100 + 1):
+    # 각 선의 끝점을 제거해야함!! +1 하지마!!
+    for i in range(n_list[0] + 100, n_list[1] + 100):
         num_list.append(i)
 
-print(num_list)
 
 # 원소마다 값을 카운트
 count_list = [ 0 for _ in range(201) ]
@@ -18,5 +18,4 @@ for num in num_list:
 
     count_list[num] += 1
 
-print(count_list)
 print(max(count_list))
