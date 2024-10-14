@@ -29,6 +29,7 @@ def _bDigit(tendigit, b):
         bdigit_list.append(tendigit % b)
         tendigit //= b
 
+    bdigit_list = bdigit_list[::-1]
     bdigit = int(''.join(map(str, bdigit_list)))
 
     return bdigit
