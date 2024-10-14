@@ -17,6 +17,10 @@ for n_list in matrix:
 # 원소마다 값을 카운트
 count_list = [ 0 for _ in range(300) ]
 for num in num_list:
+
+    if num == -100 or num == 100:
+        continue
+
     count_list[num + 100] += 1
 
 
