@@ -1,7 +1,7 @@
 n = int(input())
 matrix = [ list(map(int, input().split())) for _ in range(n) ]
 
-## 음수값도 고려해야함!!
+## 음수값도 고려해야함!! -> max_num을 두개의 합은 최대 201까지(0포함)
 
 # 모든 리스트의 원소값 일렬로 정렬, 그리고 max값 찾기
 max_num = 0
@@ -14,10 +14,8 @@ for n_list in matrix:
         if n > max_num:
             max_num = n 
 
-print(num_list)
-
 # 원소마다 값을 카운트
-count_list = [ 0 for _ in range(max_num + 1) ]
+count_list = [ 0 for _ in range(200 + 1) ]
 for num in num_list:
     count_list[num - 1] += 1
 
