@@ -34,5 +34,4 @@ def _bDigit(tendigit, b):
     return bdigit
 
 tendigit = _10Digit(a, n)
-
 print(_bDigit(tendigit, b))
