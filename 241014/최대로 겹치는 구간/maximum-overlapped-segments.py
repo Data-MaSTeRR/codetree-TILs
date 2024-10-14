@@ -14,6 +14,8 @@ for n_list in matrix:
         if n > max_num:
             max_num = n 
 
+print(num_list)
+
 # 원소마다 값을 카운트
 count_list = [ 0 for _ in range(max_num + 1) ]
 for num in num_list:
