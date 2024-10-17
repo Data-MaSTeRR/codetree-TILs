@@ -20,6 +20,7 @@ for nd_tuple in matrix:
             cur_color[cur_loc] = 2
             x -= 1 
 
+            # 아직 남은 이동거리가 남았을 때만 현재 위치를 업데이트함. -> 즉 맨 마지막에는 업데이트 x
             if x:
                 cur_loc += 1
 
