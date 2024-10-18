@@ -33,6 +33,10 @@ for i in range(MAX_K):
     for j in range(MAX_K):
         if checked[i][j] == 1:
             temp += 1
+        else:
+            if temp > max_x_len:
+        max_x_len = temp
+        
     if temp > max_x_len:
         max_x_len = temp
 
