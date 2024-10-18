@@ -43,7 +43,7 @@ for nd_tuple in matrixB:
 cnt = 0
 for idx in range(2, MAX):
 
-    if checkA[idx] == checkB[idx] and checkA[idx - 1] != checkB[idx - 1]:
+    if checkA[idx] == checkB[idx] and abs(checkA[idx - 1] - checkB[idx - 1]) == 2:
         cnt += 1
 
 print(cnt)
