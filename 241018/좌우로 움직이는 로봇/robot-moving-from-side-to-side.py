@@ -40,10 +40,20 @@ for nd_tuple in matrixB:
         
         time_b += 1
 
-cnt = 0
-for idx in range(2, MAX):
+# 동기화의 필요성
+if time_a > time_b:
+    for idx in range(time_b, time_a):
+        checkB[idx] = checkB[time_b - 1]
 
-    if checkA[idx] == checkB[idx] and abs(checkA[idx - 1] - checkB[idx - 1]) == 2:
+elif time_a < time_b:
+    for idx in range(time_a, time_b):
+        checkA[idx] = checkA[time_a - 1]
+
+cnt = 0
+time_max = max(time_a, time_b)
+for idx in range(1, time_max):
+
+    if checkA[idx] == checkB[idx] and checkA[idx - 1] != checkB[idx - 1]:
         cnt += 1
 
 print(cnt)
