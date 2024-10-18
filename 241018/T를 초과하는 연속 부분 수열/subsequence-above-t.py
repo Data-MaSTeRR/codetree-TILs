@@ -2,22 +2,16 @@ n, t = map(int, input().split())
 n_list = list(map(int, input().split()))
 
 cnt, max_cnt = 0, 0
-for idx in range(n):
-
+for n in n_list:
     
-    if idx >= 1 and n_list[idx] > t and n_list[idx] > n_list[idx - 1]:
-        if flag == False:
-            cnt = 0
-        flag = True
+    if n > t:
         cnt += 1
+        max_cnt = max(max_cnt, cnt)   
     else:
-        cnt = 1
-        flag = False
+        cnt = 0
     
-    max_cnt = max(max_cnt, cnt)
-
-
-if cnt == 1:
+    
+if max_cnt == 0:
     print(0)
 else:
     print(max_cnt)
