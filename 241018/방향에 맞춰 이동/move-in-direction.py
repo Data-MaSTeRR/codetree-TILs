@@ -8,19 +8,22 @@ dx, dy = [-1, 0, 0, 1], [0, -1, 1, 0]
 
 for dn_tuple in go_matrix:
 
-    direction = dn_tuple[0]
-    distance = int(dn_tuple[1])
+    c_dir = dn_tuple[0]
+    dist = int(dn_tuple[1])
 
-    if direction == "W":
-        x, y = x + (dx[0] * distance), y + dy[0]
-    
-    elif direction == "S":
-        x, y = x + dx[1], y + (dy[1] * distance)
-     
-    elif direction == "N":
-        x, y = x + dx[2], y + (dy[2] * distance) 
-    
-    elif direction == "E":
-        x, y = x + (dx[3] * distance), y + dy[3]
+    # 각 방향에 맞는 번호를 붙여줍니다.
+    if c_dir == 'W':
+        move_dir = 0
+    elif c_dir == 'S':
+        move_dir = 1
+    elif c_dir == 'N':
+        move_dir = 2
+    elif c_dir == 'E':
+        move_dir = 3
+
+    # 주어진 방향대로 dist 거리만큼 이동했을 경우의
+    # 위치를 구해줍니다.
+    x += dx[move_dir] * dist
+    y += dy[move_dir] * dist
     
 print(x, y)
