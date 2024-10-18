@@ -13,7 +13,7 @@ by1 += OFFSET
 bx2 += OFFSET
 by2 += OFFSET
 
-### 첫번째에서 1만 찾고, 가로세로를 각각 비교하고 더 큰 값을 구해 그것을 곱함
+### 첫번째에서 1만 찾고, (x,y)의 최대최소를 구하고 그것을 최종으로 이용함 (*)
 
 checked = [ [0] * MAX_K for _ in range(MAX_K) ]
 for x in range(ax1, ax2):
@@ -24,32 +24,24 @@ for x in range(bx1, bx2):
     for y in range(by1, by2):
         if checked[x][y] == 1:
             checked[x][y] = 0
-            
-max_x_len = 0
-max_y_len = 0
-# X축 선분 최대 길이 구하기 -> ok
-for i in range(MAX_K):
-    temp = 0  # 매 행에 대해 초기화
-    for j in range(MAX_K):
-        if checked[i][j] == 1:
-            temp += 1
 
-    if temp > max_x_len:
-        max_x_len = temp
+# 최소, 최대 값을 구하기 위한 초기화
+min_x, min_y, max_x, max_y = MAX_K, MAX_K, 0, 0
 
-# Y축 선분 최대 길이 구하기 -> 어렵네 공부좀 해야할 듯
-for j in range(MAX_K):  # 열 순회
-    temp = 0  # 매 열에 대해 초기화
-    for i in range(MAX_K):  # 각 열에서 모든 행을 순회
-        if checked[i][j] == 1:
-            temp += 1
-        else:
-            if temp > max_y_len:
-                max_y_len = temp
-            temp = 0  # 연속이 끊겼으므로 temp를 초기화
-    # 끝난 후 마지막으로 최대 값을 확인
-    if temp > max_y_len:
-        max_y_len = temp
+# 남은 1의 영역에서 최소, 최대 좌표를 구함
+for x in range(MAX_K):
+    for y in range(MAX_K):
+        if checked[x][y] == 1:
+            min_x = min(min_x, x)
+            min_y = min(min_y, y)
+            max_x = max(max_x, x)
+            max_y = max(max_y, y)
 
-# 결과 출력
-print(f"{max_x_len * max_y_len}")
+# 최소, 최대 값이 바뀌지 않았을 경우 -> 유효한 영역이 없음
+if min_x == MAX_K or min_y == MAX_K:
+    print(0)
+else:
+    # X, Y 길이를 계산
+    x_len = max_x - min_x + 1  # 마지막 좌표 포함
+    y_len = max_y - min_y + 1  # 마지막 좌표 포함
+    print(f"{x_len * y_len}")
