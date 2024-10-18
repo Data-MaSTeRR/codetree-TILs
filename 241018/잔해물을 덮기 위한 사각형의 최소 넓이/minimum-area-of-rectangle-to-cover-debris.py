@@ -35,8 +35,9 @@ for i in range(MAX_K):
             temp += 1
         else:
             if temp > max_x_len:
-        max_x_len = temp
-        
+                 max_x_len = temp
+            temp = 0
+
     if temp > max_x_len:
         max_x_len = temp
 
