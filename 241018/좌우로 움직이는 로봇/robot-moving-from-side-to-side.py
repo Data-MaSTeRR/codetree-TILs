@@ -40,7 +40,7 @@ for nd_tuple in matrixB:
         
         time_b += 1
 
-# 동기화의 필요성
+# 동기화의 필요성 -> 시간 더 작은 것 끝까지 유지해주어야 반대쪽이 체크하는 것이 의미있음
 if time_a > time_b:
     for idx in range(time_b, time_a):
         checkB[idx] = checkB[time_b - 1]
@@ -50,7 +50,7 @@ elif time_a < time_b:
         checkA[idx] = checkA[time_a - 1]
 
 cnt = 0
-time_max = max(time_a, time_b)
+time_max = max(time_a, time_b) # 둘 중에 큰 시간 사용 -> 한쪽만 움직여도 조건 만족하기 때문
 for idx in range(1, time_max):
 
     if checkA[idx] == checkB[idx] and checkA[idx - 1] != checkB[idx - 1]:
