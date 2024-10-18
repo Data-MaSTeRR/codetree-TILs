@@ -42,6 +42,6 @@ if min_x == MAX_K or min_y == MAX_K:
     print(0)
 else:
     # X, Y 길이를 계산
-    x_len = max_x - min_x + 1  # 마지막 좌표 포함
-    y_len = max_y - min_y + 1  # 마지막 좌표 포함
+    x_len = max_x - min_x + 1 # 길이는 마지막 좌표까지 포함 -> .2 .3 .4 .5 .6 (누락됨)7
+    y_len = max_y - min_y + 1 # 길이는 마지막 좌표까지 포함
     print(f"{x_len * y_len}")
