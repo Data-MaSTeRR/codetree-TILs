@@ -41,7 +41,7 @@ for nd_tuple in matrixB:
         time_b += 1
 
 cnt = 0
-for idx in range(1, MAX):
+for idx in range(2, MAX):
 
     if checkA[idx] == checkB[idx] and checkA[idx - 1] != checkB[idx - 1]:
         cnt += 1
