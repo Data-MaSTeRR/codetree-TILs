@@ -1,29 +1,30 @@
 n = int(input())
 matrix = [ list(map(int, input().split())) for _ in range(n) ]
 
-x, y = 0, 0
 # 북, 동, 남, 서
-dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]
-dir_list = [0, 1, 2, 3]
+dxs = [0, 1,  0, -1]
+dys = [1, 0, -1,  0]
+
 
 def in_range(x, y):
-    if x >= 0 and y >= 0 and x < n and y < n:
-        return True
+    return 0 <= x and x < n and 0 <= y and y < n
 
-cnt = 0
-for x in range(n):
-    for y in range(n):
-  
-        overcnt = 0
-        for dir_num in dir_list:
-            tempx, tempy = x, y
-            tempx += dx[dir_num]
-            tempy += dy[dir_num]
-            if in_range(tempx, tempy) == True and matrix[tempx][tempy] == 1:
-                overcnt += 1
-           
-        
-        if overcnt >= 3:
+
+def adjacent_cnt(x, y):
+    cnt = 0
+    for dx, dy in zip(dxs, dys):
+        nx, ny = x + dx, y + dy
+        if in_range(nx, ny) and matrix[nx][ny] == 1:
             cnt += 1
+    
+    return cnt
 
-print(cnt)
+
+# 각 칸을 탐색합니다.
+ans = 0
+for i in range(n):
+    for j in range(n):
+        if adjacent_cnt(i, j) >= 3:
+            ans += 1
+    
+print(ans)
