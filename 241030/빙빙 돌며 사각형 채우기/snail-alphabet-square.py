@@ -18,14 +18,11 @@ for i in range(66, 64 + (n*m + 1)):
 
     ny, nx = y + dys[move_dir], x + dxs[move_dir]
     
-    if in_range(ny, nx) and matrix[ny][nx] == 0:
-        matrix[ny][nx] = chr(i)
-    
-    else:
+    if in_range(ny, nx) == False or matrix[ny][nx] != 0:
         move_dir = (move_dir + 1) % 4
         ny, nx = y + dys[move_dir], x + dxs[move_dir]
-        matrix[ny][nx] = chr(i)
     
+    matrix[ny][nx] = chr(i)
     y, x = ny, nx
 
 
