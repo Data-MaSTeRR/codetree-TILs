@@ -14,9 +14,9 @@ mapper = {
 # 행(y), 열(X)에 유의
 x, y, move_dir = int(x) - 1, int(y) - 1, mapper[c_dir]
 
-# 북, 동, 서, 남
+# 북, 동, 서, 남 -> 제4사분면이라 북남이 기호바뀜
 dxs = [0, 1, -1, 0]
-dys = [1, 0, 0, -1]
+dys = [-1, 0, 0, 1]
 
 
 def in_range(x, y):
