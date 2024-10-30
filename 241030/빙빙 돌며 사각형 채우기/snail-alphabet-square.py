@@ -1,5 +1,5 @@
 n, m = map(int, input().split())
-matrix = [ [0] * m for _ in range(m) ]
+matrix = [ [0] * m for _ in range(n) ]
 
 ## 남북 부호유의
 # 동, 남, 서, 북
