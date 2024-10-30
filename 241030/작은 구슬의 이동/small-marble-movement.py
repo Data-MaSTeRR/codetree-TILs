@@ -1,7 +1,7 @@
 # n x n / t초
 n, t = tuple(map(int, input().split()))
 # 초기값
-x, y, c_dir = tuple(input().split())
+y, x, c_dir = tuple(input().split())
 
 # 각 알파벳 별 방향 번호를 설정합니다.
 mapper = {
@@ -12,7 +12,7 @@ mapper = {
 }
 
 # 행(y), 열(X)에 유의
-y, x, move_dir = int(x) - 1, int(y) - 1, mapper[c_dir]
+x, y, move_dir = int(x) - 1, int(y) - 1, mapper[c_dir]
 
 # 북, 동, 서, 남
 dxs = [0, 1, -1, 0]
