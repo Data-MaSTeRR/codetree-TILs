@@ -22,11 +22,15 @@ def side_check(y, x, move_dir, matrix):
 
 
 matrix[y][x] = 1
-x += 1
-matrix[y][x] = 2
 
 
-for i in range(3, n*n + 1):
+for i in range(2, n*n + 1):
+
+    if i == 2:
+        ny, nx = y + dys[move_dir], x + dxs[move_dir]
+        matrix[ny][nx] = i
+        y, x = ny, nx
+        continue
 
     ny, nx = y + dys[move_dir], x + dxs[move_dir]
 
