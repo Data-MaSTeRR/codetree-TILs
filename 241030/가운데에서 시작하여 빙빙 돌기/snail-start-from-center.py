@@ -11,13 +11,31 @@ y, x, move_dir = n // 2, n // 2, 0
 def in_range(y, x):
     return y >= 0 and x >= 0 and y < n and x < n
 
-matrix[y][x] = 1
+def side_check(y, x, move_dir, matrix):
+    
+    move_dir = (move_dir + 1) % 4
+    ny, nx = y + dys[move_dir], x + dxs[move_dir]
+    if matrix[ny][nx] == 0:
+        return True
 
-for i in range(2, n*n + 1):
+    return False
+
+
+matrix[y][x] = 1
+x += 1
+matrix[y][x] = 2
+
+
+for i in range(3, n*n + 1):
 
     ny, nx = y + dys[move_dir], x + dxs[move_dir]
 
-    if in_range(ny, nx) == False or matrix[ny][nx] != 0:
+    # 한칸 더 가면 범위 밖 or 현재 위치에서 세방향이 0인 경우
+    if in_range(ny, nx) == False:
+        move_dir = (move_dir + 1) % 4
+        ny, nx = y + dys[move_dir], x + dxs[move_dir]
+    
+    elif side_check(y, x, move_dir, matrix) == True:
         move_dir = (move_dir + 1) % 4
         ny, nx = y + dys[move_dir], x + dxs[move_dir]
 
