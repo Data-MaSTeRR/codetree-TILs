@@ -11,10 +11,11 @@ y, x, move_dir = 0, 0, 0
 def in_range(y, x):
     return y >= 0 and x >= 0 and y < n and x < m
 
-matrix[0][0] = chr(65) 
+alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' * 10000
 
-# chr(65) = A / ord(A) = 65
-for i in range(66, 64 + (n*m + 1)):
+matrix[0][0] = alpha[0]
+
+for i in range(1, n*m):
 
     ny, nx = y + dys[move_dir], x + dxs[move_dir]
     
@@ -22,7 +23,7 @@ for i in range(66, 64 + (n*m + 1)):
         move_dir = (move_dir + 1) % 4
         ny, nx = y + dys[move_dir], x + dxs[move_dir]
     
-    matrix[ny][nx] = chr(i)
+    matrix[ny][nx] = alpha[i]
     y, x = ny, nx
 
 
