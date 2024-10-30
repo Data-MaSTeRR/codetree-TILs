@@ -7,15 +7,16 @@ x, y, c_dir = tuple(input().split())
 mapper = {
     'U': 0,
     'R': 1,
-    'D': 2,
-    'L': 3
+    'L': 2,
+    'D': 3
 }
 
-x, y, move_dir = int(x) - 1, int(y) - 1, mapper[c_dir]
+# 행(y), 열(X)에 유의
+y, x, move_dir = int(x) - 1, int(y) - 1, mapper[c_dir]
 
 # 북, 동, 서, 남
 dxs = [0, 1, -1, 0]
-dys = [1, 0, -0, -1]
+dys = [1, 0, 0, -1]
 
 
 def in_range(x, y):
@@ -32,4 +33,5 @@ for _ in range(t):
     else:
         move_dir = 3 - move_dir
 
-print(x + 1, y + 1)
+# 행열로 출력이니 (y, x)
+print(y + 1, x + 1)
