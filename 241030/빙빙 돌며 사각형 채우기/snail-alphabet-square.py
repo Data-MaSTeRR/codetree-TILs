@@ -28,6 +28,7 @@ for i in range(66, 64 + (n*m + 1)):
     
     y, x = ny, nx
 
+
 for y in range(n):
     for x in range(m):
         print(matrix[y][x], end = ' ')
