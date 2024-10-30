@@ -24,7 +24,7 @@ for i in range(2, n*n + 1):
     matrix[ny][nx] = i
     y, x = ny, nx
 
-for y in range(n):
-    for x in range(n):
-        print(matrix[y][x], end = ' ')
+for row in range(n):
+    for column in range(n):
+        print(matrix[row][column], end = ' ')
     print()
