@@ -16,7 +16,7 @@ for i in range(len(a)):
     _10int += int_a % 10 * (2 ** i)
     int_a //= 10
 
-if int_a == 1:
+if a == '1':
     print(0)
 else:
     print(_10int)
