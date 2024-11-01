@@ -1,11 +1,16 @@
 a = input()
 a_list = list(a)
 
-
+flag = False
 for idx in range(len(a)):
     if a_list[idx] == '0':
         a_list[idx] = '1'
+        flag = True
         break
+
+if flag == False:
+    a_list[-1] = '0'
+
 
 a = ''.join(a_list)
 int_a = int(a)
