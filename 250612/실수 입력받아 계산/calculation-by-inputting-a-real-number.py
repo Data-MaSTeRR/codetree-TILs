@@ -1,3 +1,3 @@
-a = int(input())
-b = int(input())
+a = float(input())
+b = float(input())
 print(f'{a+b:.2f}')
